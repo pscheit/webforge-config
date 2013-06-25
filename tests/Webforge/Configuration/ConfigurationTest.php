@@ -62,4 +62,24 @@ class ConfigurationTest extends \Webforge\Code\Test\Base {
     
     $this->fail('Exception not cought');
   }
+
+
+  public function testToArrayReturnsTheConfigurationAsArray() {
+    $conf = array(
+      'webforge' => array(
+        'staging'=>true,
+        'dev'=>false,
+        'location'=>'D:\www\ka',
+      ),
+      'doctrine'=>array(
+        'entities'=>array('user','project','customer'),
+      ),
+      'root'=>'thv'
+    );
+
+    $this->assertEquals(
+      $conf,
+      $this->configuration->toArray()
+    );
+  }
 }

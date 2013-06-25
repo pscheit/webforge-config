@@ -66,4 +66,14 @@ class Configuration {
       throw MissingConfigVariableException::fromKeys($e->getKeys());
     }
   }
+
+  /**
+   * Returns the values of the configuration as nested Array
+   * 
+   * keys seperated with . will be expanded
+   * @return array
+   */
+  public function toArray() {
+    return $this->keysMap->toArray();
+  }
 }
