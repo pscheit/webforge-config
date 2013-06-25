@@ -1,0 +1,24 @@
+{
+    "name": "webforge/config",
+    "description": "Configuration and Readers for webforge",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philipp Scheit",
+            "email": "p.scheit@ps-webforge.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    },
+    "require-dev": {
+        "webforge/testplate": "1.2.*@dev",
+        "webforge/common": "1.1.*@dev"
+    },
+     "autoload": {
+         "psr-0": {
+             "Webforge\\Configuration": ["lib/", "tests/"]
+         }
+     }   
+}
