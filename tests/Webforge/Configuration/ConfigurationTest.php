@@ -26,6 +26,10 @@ class ConfigurationTest extends \Webforge\Code\Test\Base {
     $this->assertEquals('thv', $this->configuration->get('root'));
   }
 
+  public function testReturnsDefaultGivenForKeyWhichIsNotSet() {
+    $this->assertEquals(array(), $this->configuration->get('webforge.translations', array()));
+  }
+
   /**
    * @expectedException Webforge\Configuration\MissingConfigVariableException
    */

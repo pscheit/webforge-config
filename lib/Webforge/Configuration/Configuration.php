@@ -47,11 +47,11 @@ class Configuration {
   /**
    * Gets a value in the configuration
    *
-   * Does return NULL for non defined keys
+   * Does return $default for non defined keys
    * @param string|array $keys use with . seperated or as an array
    */
-  public function get($keys) {
-    return $this->keysMap->get($keys, NULL);
+  public function get($keys, $default = NULL) {
+    return $this->keysMap->get($keys, $default);
   }
 
   /**  
@@ -59,7 +59,7 @@ class Configuration {
    * 
    * throws an MissingConfigVariableException if key does not exist
    */
-  public function req($keys, $default = NULL) {
+  public function req($keys) {
     try {
       return $this->keysMap->get($keys, KeysMap::DO_THROW_EXCEPTION);
     } catch (KeysNotFoundException $e) {
