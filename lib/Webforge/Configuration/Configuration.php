@@ -67,6 +67,15 @@ class Configuration {
     }
   }
 
+  public function merge(Configuration $otherConfig, $filterKeys = array()) {
+    $toKeys = array();
+    $ownData = $this->keysMap->get($toKeys, array());
+    $foreignData = $otherConfig->get($filterKeys, array());
+
+    $this->keysMap->set($toKeys, array_replace_recursive($ownData, $foreignData));
+    return $this;
+  }
+
   /**
    * Returns the values of the configuration as nested Array
    * 
