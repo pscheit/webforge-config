@@ -86,4 +86,19 @@ class ConfigurationTest extends \Webforge\Code\Test\Base {
       $this->configuration->toArray()
     );
   }
+
+  public function testMergeWithFilteredKeys() {
+    $defaults = new Configuration(array('defaults'=>array(
+      'root'=>'will-be-overridden',
+      'new'=>'inherited'
+    )));
+
+    $mergedConfig = new Configuration(array());
+    $mergedConfig->merge($defaults, array('defaults'));
+
+    $mergedConfig->merge($this->configuration);
+
+    $this->assertNotEquals('will-be-overridden', $mergedConfig->req('root'));
+    $this->assertEquals('inherited', $mergedConfig->req('new'));
+  }
 }
