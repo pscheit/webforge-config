@@ -15,4 +15,17 @@
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
+
+    <listeners>
+      <listener class="\Mockery\Adapter\Phpunit\TestListener"></listener>
+    </listeners>
+
+    <filter>
+      <whitelist>
+        <directory suffix=".php">lib</directory>
+        <exclude>
+        <!--<file>class\Psc\PHP\Parser.php</file>-->
+        </exclude>
+      </whitelist>
+    </filter>
 </phpunit>
