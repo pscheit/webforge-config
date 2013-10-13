@@ -11,7 +11,7 @@ before_install:
   - composer self-update
   - COMPOSER_ROOT_VERSION=dev-master composer install --dev --prefer-source --no-interaction
 
-script: phpunit  -c phpunit.travis.xml
+script: phpunit
 
 notifications:
   irc: "irc.freenode.org#webforge"
