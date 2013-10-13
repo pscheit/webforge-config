@@ -4,8 +4,8 @@ namespace Webforge\Configuration;
 
 use Psc\DataInput;
 use Psc\DataInputException;
-use Webforge\Common\DataStructure\KeysMap;
-use Webforge\Common\DataStructure\KeysNotFoundException;
+use Webforge\Collections\KeysMap;
+use Webforge\Collections\KeysNotFoundException;
 
 /**
  *
