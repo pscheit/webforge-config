@@ -15,7 +15,7 @@
     "require-dev": {
         "webforge/testplate": "1.*@dev",
         "webforge/common": "1.*@dev",
-        "mockery/mockery": "0.8.*@stable"
+        "mockery/mockery": "dev-master"
     },
      "autoload": {
          "psr-0": {
