@@ -1,0 +1,47 @@
+{
+    "psc-cms": {
+        "version": "1.2"
+    },
+    "project": {
+        "title": "ACME SuperBlog"
+    },
+    "db": {
+        "default": {
+            "host": "127.0.0.1",
+            "user": "fake",
+            "password": "eb9ep2xph82r4b",
+            "database": "fake",
+            "port": null,
+            "charset": "utf8"
+        },
+        "tests": {
+            "host": "127.0.0.1",
+            "user": "fake",
+            "password": "eb9ep2xph82r4b",
+            "database": "fake_tests",
+            "port": null,
+            "charset": "utf8"
+        }
+    },
+    "languages": [
+        "de",
+        "en"
+    ],
+    "doctrine": {
+        "entities": {
+            "names": {
+                "contentstream": "ContentStream",
+                "navigationnode": "NavigationNode",
+                "newsentry": "NewsEntry",
+                "calendarevent": "CalendarEvent"
+            }
+        },
+        "types": [
+
+        ]
+    },
+    "mail": {
+        "from": "info@acme.ps-webforge.com",
+        "envelope": "info@acme.ps-webforge.com"
+    }
+}

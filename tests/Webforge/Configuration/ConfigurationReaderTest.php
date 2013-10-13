@@ -27,14 +27,7 @@ class ConfigurationReaderTest extends \Webforge\Code\Test\Base {
 
     $configuration = $this->reader->fromPHPFile($this->file);
 
-    $this->assertInstanceOf('Webforge\Configuration\Configuration', $configuration);
-
-    $this->assertEquals('ACME SuperBlog', $configuration->get('project.title'));
-    $this->assertEquals('fake', $configuration->get('db.default.user'));
-    $this->assertEquals('fake', $configuration->get('db.default.database'));
-
-    $this->assertEquals('fake', $configuration->get('db.tests.user'));
-    $this->assertEquals('fake_tests', $configuration->get('db.tests.database'));
+    $this->assertConfigurationContents($configuration);
   }
 
   public function testCannotReadEmptyFile() {
@@ -45,5 +38,22 @@ class ConfigurationReaderTest extends \Webforge\Code\Test\Base {
 
   public function testReadFromEmptyArray() {
     $this->assertInstanceOf('Webforge\Configuration\Configuration', $this->reader->fromArray(array()));
+  }
+
+  public function testReadFromJSONFile() {
+    $configuration = $this->reader->fromJSONFile($this->file->setExtension('json'));
+
+    $this->assertConfigurationContents($configuration);
+  }
+
+  protected function assertConfigurationContents($configuration) {
+    $this->assertInstanceOf('Webforge\Configuration\Configuration', $configuration);
+
+    $this->assertEquals('ACME SuperBlog', $configuration->get('project.title'));
+    $this->assertEquals('fake', $configuration->get('db.default.user'));
+    $this->assertEquals('fake', $configuration->get('db.default.database'));
+
+    $this->assertEquals('fake', $configuration->get('db.tests.user'));
+    $this->assertEquals('fake_tests', $configuration->get('db.tests.database'));
   }
 }
