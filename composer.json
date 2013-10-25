@@ -15,7 +15,8 @@
     "require-dev": {
         "webforge/testplate": "1.*@dev",
         "webforge/common": "1.*@dev",
-        "mockery/mockery": "dev-master"
+        "mockery/mockery": "dev-master",
+        "satooshi/php-coveralls": "dev-master"
     },
      "autoload": {
          "psr-0": {

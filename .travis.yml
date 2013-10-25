@@ -13,6 +13,9 @@ before_install:
 
 script: phpunit --coverage-clover build/logs/clover.xml
 
+after_script:
+  - php vendor/bin/coveralls -v
+
 notifications:
   irc: "irc.freenode.org#webforge"
   mail: p.scheit@ps-webforge.com
